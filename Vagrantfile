@@ -8,8 +8,8 @@ Vagrant.configure("2") do |config|
 
   # Provider Settings
   config.vm.provider "virtualbox" do |vb|
-    #vb.memory = 1024
-    #vb.cpus = 1
+    vb.memory = 1024
+    vb.cpus = 2
     
   end
 
@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
 
   # Folder Settings
-  config.vm.synced_folder ".", "/var/www/html", :nfs => { :mount_options => ["dmode=777", "fmode=666"] }
+  #config.vm.synced_folder ".", "/var/www/html", :nfs => { :mount_options => ["dmode=777", "fmode=666"] }
   
   config.vm.provision "shell", path: "install_docker.sh"
 end
