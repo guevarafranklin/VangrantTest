@@ -4,12 +4,12 @@
 Vagrant.configure("2") do |config|
   
   # Box Settings
-  config.vm.box = "generic/ubuntu1604"
+  config.vm.box = "ubuntu/trusty64"
 
   # Provider Settings
-  config.vm.provider "libvirt" do |vb|
-    vb.memory = 1024
-    vb.cpus = 1
+  config.vm.provider "virtualbox" do |vb|
+    #vb.memory = 1024
+    #vb.cpus = 1
     
   end
 
